@@ -1,0 +1,1 @@
+python vis.py --video AIG.mp4 --gpu 0
