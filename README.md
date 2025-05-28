@@ -56,7 +56,7 @@ Our demo is based on a modified version of the [MotionAGFormer](https://github.c
 
 ### Copyright Notice
 
-This project is licensed under the MIT License. For more details, please refer to the [LICENSE.txt](https://github.com/Reus3237/Pose3DM/blob/Pose3DM/LICENSE.txt)
+This project is licensed under the MIT License. For more details, please refer to the [LICENSE.txt](https://github.com/Reus3237/Pose3DM/blob/main/LICENSE.txt)
 
 ### Acknowledgement
 
