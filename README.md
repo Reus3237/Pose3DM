@@ -1,87 +1,139 @@
+当然可以！以下是优化后的 README 文件内容，以便您轻松复制：
 
- 
-# Bidirectional Mamba-enhanced 3d human pose estimation for accurate clinical gait analysis [The Visual Computer]
+```markdown
+# Bidirectional Mamba-enhanced 3D Human Pose Estimation for Accurate Clinical Gait Analysis
 
+**Published in:** The Visual Computer
 
+## Overview
 
-### Environment
+This project implements a Bidirectional Mamba architecture for monocular 3D human pose estimation, specifically designed for clinical gait analysis. Our approach enhances the accuracy of pose estimation and facilitates gait analysis in clinical settings.
+
+## Environment
 
 The project is developed under the following environment:
 
-- Python 3.10.x
-- PyTorch 2.2.1
-- CUDA 12.1
+- **Python**: 3.10.x
+- **PyTorch**: 2.2.1
+- **CUDA**: 12.1 (ensure CUDA is installed and configured correctly)
 
-1. `conda create -n pose3dm python=3.10.16`
-2. `conda activate pose3dm`
-3. `conda install pytorch torchvision torchaudio pytorch-cuda=12.1 -c pytorch -c nvidia`
-4. `pip install -r requirements.txt -i https://mirrors.aliyun.com/pypi/simple/`
-5. `cd kernels/selective_scan && pip install -e .`
+### Setup Instructions
 
-### Dataset
+To set up your environment, follow these steps:
 
-Preprocessing
+1. **Create a new conda environment:**
+   ```bash
+   conda create -n pose3dm python=3.10.16
+   ```
+2. **Activate the conda environment:**
+   ```bash
+   conda activate pose3dm
+   ```
+3. **Install required packages:**
+   ```bash
+   conda install pytorch torchvision torchaudio pytorch-cuda=12.1 -c pytorch -c nvidia
+   ```
+4. **Install additional Python dependencies:**
+   ```bash
+   pip install -r requirements.txt -i https://mirrors.aliyun.com/pypi/simple/
+   ```
+5. **Install the selective scan kernel:**
+   ```bash
+   cd kernels/selective_scan && pip install -e .
+   ```
 
-1. Download the fine-tuned Stacked Hourglass detections of [MotionBERT](https://github.com/Walter0807/MotionBERT/blob/main/docs/pose3d.md)'s preprocessed H3.6M data [here](https://onedrive.live.com/?authkey=%21AMG5RlzJp%2D7yTNw&id=A5438CD242871DF0%21206&cid=A5438CD242871DF0) and unzip it to 'data/motion3d', or direct download our processed data here and unzip it.
-2. Slice the motion clips by running the following python code in `tools/convert_h36m.py`
+## Dataset Preparation
 
-`python convert_h36m.py`
+### Preprocessing
 
-### Training
+1. **Download the fine-tuned Stacked Hourglass detections** from [MotionBERT's documentation](https://github.com/Walter0807/MotionBERT/blob/main/docs/pose3d.md) and extract it to `data/motion3d`.
 
-After preparing the dataset, you can train the model using the following steps:
+2. **Alternatively, download our processed data** [here](<Insert_download_link>) and unzip it to the same directory.
 
-You can train Human3.6M with the following command:
+3. **Slice the motion clips** by executing the following command:
+   ```bash
+   python tools/convert_h36m.py
+   ```
 
-`python train.py --config <PATH-TO-CONFIG> --checkpoint <PATH-TO-CHECKPOINT>`
+## Training the Model
 
-For example:
+After preparing the dataset, you can train the model with the following command:
 
-`python train.py --config configs/pose3d/Pose3DM_train_h36m_B.yaml --checkpoint checkpoint/pose3d/MB_train_h36m`
+```bash
+python train.py --config <PATH-TO-CONFIG> --checkpoint <PATH-TO-CHECKPOINT>
+```
 
+**Example command:**
+```bash
+python train.py --config configs/pose3d/Pose3DM_train_h36m_B.yaml --checkpoint checkpoint/pose3d/MB_train_h36m
+```
 
-### Evaluation
-We provide [Pose3DM_B](https://drive.google.com/file/d/123AA9GDnnnbkiGuK-VoynY4bx4wPIn_1/view?usp=drive_link). You can download and get pretrained weight.
+## Model Evaluation
 
-`python train.py --eval-only --checkpoint <CHECKPOINT-DIRECTORY> --checkpoint-file <CHECKPOINT-FILE-NAME> --config <PATH-TO-CONFIG>`
+To evaluate the model, download the pretrained weights for [Pose3DM_B](https://drive.google.com/file/d/123AA9GDnnnbkiGuK-VoynY4bx4wPIn_1/view?usp=drive_link) and place them in the appropriate directory.
 
-For example:
+Execute the following command to evaluate the model:
 
-`python train.py --config checkpoint/pose3d/Pose3DM_B/config.yaml --evaluate checkpoint/pose3d/Pose3DM_B/best_epoch.bin --checkpoint eval/checkpoint`
+```bash
+python train.py --eval-only --checkpoint <CHECKPOINT-DIRECTORY> --checkpoint-file <CHECKPOINT-FILE-NAME> --config <PATH-TO-CONFIG>
+```
 
-### Demo
+**Example command:**
+```bash
+python train.py --config checkpoint/pose3d/Pose3DM_B/config.yaml --evaluate checkpoint/pose3d/Pose3DM_B/best_epoch.bin --checkpoint eval/checkpoint
+```
 
-Our demo is based on a modified version of the [MotionAGFormer](https://github.com/TaatiTeam/MotionAGFormer) repository. To begin, download the [YOLOv3](https://drive.google.com/drive/folders/1_ENAMOsPM7FXmdYRbkwbFHgzQq_B_NQA) and [HRNet](https://drive.google.com/drive/folders/1_ENAMOsPM7FXmdYRbkwbFHgzQq_B_NQA) pretrained models from the provided link and place them in the './demo/lib/checkpoint' directory. Next, download our [Pose3DM_B](https://drive.google.com/file/d/123AA9GDnnnbkiGuK-VoynY4bx4wPIn_1/view?usp=drive_link) checkpoint from the specified link and store it in the './checkpoint' directory. After that, place your in-the-wild videos in the './demo/video' directory. Run the command below:
+## Demo
 
-`python vis.py --video AIG.mp4 --gpu 0`
+To demonstrate the model's capabilities, follow these steps:
 
+1. **Download the pretrained models for YOLOv3 and HRNet** from these [links](https://drive.google.com/drive/folders/1_ENAMOsPM7FXmdYRbkwbFHgzQq_B_NQA) and place them in the `./demo/lib/checkpoint` directory.
 
+2. **Download our checkpoint for Pose3DM_B** [here](https://drive.google.com/file/d/123AA9GDnnnbkiGuK-VoynY4bx4wPIn_1/view?usp=drive_link) and store it in the `./checkpoint` directory.
 
-### Copyright Notice
+3. **Place your input videos** in the `./demo/video` directory.
 
-This project is licensed under the MIT License. For more details, please refer to the [LICENSE.txt](https://github.com/Reus3237/Pose3DM/blob/main/LICENSE.txt)
+4. **Run the demo script:**
+   ```bash
+   python vis.py --video AIG.mp4 --gpu 0
+   ```
 
-### Acknowledgement
+### Troubleshooting
+- Ensure all required dependencies are correctly installed.
+- Check that the correct CUDA version is being used.
+
+## Copyright Notice
+
+This project is licensed under the MIT License. For more details, please refer to the [LICENSE.txt](https://github.com/Reus3237/Pose3DM/blob/main/LICENSE.txt).
+
+## Acknowledgements
 
 Our code refers to the following repositories:
-
 - [MotionBERT](https://github.com/Walter0807/MotionBERT)
 - [MHFormer](https://github.com/Vegetebird/MHFormer)
 - [MotionAGFormer](https://github.com/TaatiTeam/MotionAGFormer)
 - [PoseMamba](https://github.com/nankingjing/PoseMamba)
 
+## Citation
 
-### Citation
-
-If you find our work useful for your project, please consider citing the paper:
+If you find our work useful for your project, please consider citing our paper:
 
 ```bibtex
 @article{Pose3DM2025,
-title={Bidirectional Mamba-enhanced 3d human pose estimation for accurate clinical gait analysis},
-author={Chengjun Wang, Wenhang Su, Jiabao Li, Jiahang Xu},
-journal={The Visual Computer},
-pages={1--31},
-year={2025},
-publisher={Springer}
+  title={Bidirectional Mamba-enhanced 3D human pose estimation for accurate clinical gait analysis},
+  author={Chengjun Wang, Wenhang Su, Jiabao Li, Jiahang Xu},
+  journal={The Visual Computer},
+  pages={1--31},
+  year={2025},
+  publisher={Springer}
 }
 ```
+
+## Links for Manuscript
+
+To enhance transparency and reproducibility, please find links to our resources in the abstract of the paper.
+
+- [Access the manuscript](<Insert_manuscript_link>)
+```
+
+请根据需要替换 `<Insert_download_link>` 和 `<Insert_manuscript_link>` 为具体链接。这样您可以轻松复制并粘贴优化后的 README 内容！如果需要进一步的帮助，请告诉我！
