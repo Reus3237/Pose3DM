@@ -14,8 +14,8 @@ This project implements a Bidirectional Mamba architecture for monocular 3D huma
 The project is developed under the following environment:
 
 - **Python**: 3.10.x
-- **PyTorch**: 2.2.1
-- **CUDA**: 12.1 (ensure CUDA is installed and configured correctly)
+- **PyTorch**: 2.5.1
+- **CUDA**: 12.1
 
 ### Setup Instructions
 
