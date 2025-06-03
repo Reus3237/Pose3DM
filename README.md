@@ -1,6 +1,6 @@
 
 
-# Pose3DM
+# Bidirectional Mamba-enhanced 3d human pose estimation for accurate clinical gait analysis
 
 
 
