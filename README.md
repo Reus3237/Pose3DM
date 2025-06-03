@@ -3,7 +3,7 @@
 
 # Bidirectional Mamba-enhanced 3d human pose estimation for accurate clinical gait analysis
 
-**Published in:** - [The Visual Computer](https://link.springer.com/journal/371)
+**Published in:** [The Visual Computer](https://link.springer.com/journal/371)
 
 ## Overview
 
