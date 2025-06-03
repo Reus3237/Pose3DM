@@ -136,4 +136,3 @@ To enhance transparency and reproducibility, please find links to our resources 
 - [Access the manuscript](<Insert_manuscript_link>)
 ```
 
-请根据需要替换 `<Insert_download_link>` 和 `<Insert_manuscript_link>` 为具体链接。这样您可以轻松复制并粘贴优化后的 README 内容！如果需要进一步的帮助，请告诉我！
