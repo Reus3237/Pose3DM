@@ -12,9 +12,11 @@ The project is developed under the following environment:
 - PyTorch 2.2.1
 - CUDA 12.1
 
-1. `pip install -r requirements.txt -i https://mirrors.aliyun.com/pypi/simple/`
-2. `cd kernels/selective_scan && pip install -e .`
-
+1. `conda create -n pose3dm python=3.8.5`
+2. `conda activate pose3dm`
+3. `conda install pytorch torchvision torchaudio pytorch-cuda=12.1 -c pytorch -c nvidia`
+4. `pip install -r requirements.txt -i https://mirrors.aliyun.com/pypi/simple/`
+5. `cd kernels/selective_scan && pip install -e .`
 
 ### Dataset
 
