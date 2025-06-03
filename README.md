@@ -1,6 +1,6 @@
-当然可以！以下是优化后的 README 文件内容，以便您轻松复制：
 
-```markdown
+
+
 # Bidirectional Mamba-enhanced 3D Human Pose Estimation for Accurate Clinical Gait Analysis
 
 **Published in:** The Visual Computer
@@ -40,7 +40,7 @@ To set up your environment, follow these steps:
 5. **Install the selective scan kernel:**
    ```bash
    cd kernels/selective_scan && pip install -e .
-   ```
+
 
 ## Dataset Preparation
 
