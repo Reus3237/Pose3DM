@@ -30,6 +30,7 @@ Preprocessing
 After preparing the dataset, you can train the model using the following steps:
 
 You can train Human3.6M with the following command:
+
 `python train.py --config <PATH-TO-CONFIG> --checkpoint <PATH-TO-CHECKPOINT>`
 
 For example:
@@ -69,6 +70,8 @@ Our code refers to the following repositories:
 
 
 ### Citation
+
+If you find our work useful for your project, please consider citing the paper:
 
 `@article{Pose3DM2025,
   title={Bidirectional Mamba-enhanced 3d human pose estimation for accurate clinical gait analysis},
