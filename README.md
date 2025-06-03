@@ -41,7 +41,6 @@ To set up your environment, follow these steps:
    ```bash
    cd kernels/selective_scan && pip install -e .
 
-
 ## Dataset Preparation
 
 ### Preprocessing
@@ -134,5 +133,4 @@ If you find our work useful for your project, please consider citing our paper:
 To enhance transparency and reproducibility, please find links to our resources in the abstract of the paper.
 
 - [Access the manuscript](<Insert_manuscript_link>)
-```
 
