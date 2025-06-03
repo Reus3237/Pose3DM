@@ -68,7 +68,14 @@ Our code refers to the following repositories:
 - [PoseMamba](https://github.com/nankingjing/PoseMamba)
 
 
+### Citation
 
-
-
+`@article{Pose3DM2025,
+  title={Bidirectional Mamba-enhanced 3d human pose estimation for accurate clinical gait analysis},
+  author={Chengjun Wang, Wenhang Su, Jiabao Li, Jiahang Xu},
+  journal={The Visual Computer},
+  pages={1--18},
+  year={2025},
+  publisher={Springer}
+}`
 
