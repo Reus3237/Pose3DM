@@ -74,11 +74,18 @@ Our code refers to the following repositories:
 If you find our work useful for your project, please consider citing the paper:
 
 `@article{Pose3DM2025,
+
 title={Bidirectional Mamba-enhanced 3d human pose estimation for accurate clinical gait analysis},
+
 author={Chengjun Wang, Wenhang Su, Jiabao Li, Jiahang Xu},
+
 journal={The Visual Computer},
+
 pages={1--31},
+
 year={2025},
+
 publisher={Springer}
+
 }`
 
