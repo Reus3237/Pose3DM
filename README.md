@@ -94,7 +94,7 @@ To demonstrate the model's capabilities, follow these steps:
 
 4. **Run the demo script:**
    ```bash
-   python vis.py --video AIG.mp4 --gpu 0
+   python vis.py --video s9_greeting.mp4 --gpu 0
    ```
 
 ### Troubleshooting
