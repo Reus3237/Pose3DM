@@ -12,7 +12,7 @@ The project is developed under the following environment:
 - PyTorch 2.2.1
 - CUDA 12.1
 
-1. `conda create -n pose3dm python=3.8.5`
+1. `conda create -n pose3dm python=3.10.16`
 2. `conda activate pose3dm`
 3. `conda install pytorch torchvision torchaudio pytorch-cuda=12.1 -c pytorch -c nvidia`
 4. `pip install -r requirements.txt -i https://mirrors.aliyun.com/pypi/simple/`
