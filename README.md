@@ -3,7 +3,7 @@
 
 # Bidirectional Mamba-enhanced 3d human pose estimation for accurate clinical gait analysis
 
-**Submitted to:** [The Visual Computer](https://link.springer.com/journal/371)
+**Submitted to:** [Machine Vision and Applications](https://link.springer.com/journal/138)
 
 ## Overview
 
@@ -121,7 +121,7 @@ If you find our work useful for your project, please consider citing our paper:
 @article{Pose3DM2025,
   title={Bidirectional Mamba-enhanced 3D human pose estimation for accurate clinical gait analysis},
   author={Chengjun Wang, Wenhang Su, Jiabao Li, Jiahang Xu},
-  journal={The Visual Computer},
+  journal={Machine Vision and Applications},
   pages={1--31},
   year={2025},
   publisher={Springer}
